@@ -1,12 +1,11 @@
-package com.tommy.springbootjwt.controller;
+package com.tommy.springbootjwt.user.controller;
 
-import com.tommy.springbootjwt.domain.dto.LoginDto;
-import com.tommy.springbootjwt.domain.dto.TokenResponseDto;
-import com.tommy.springbootjwt.jwt.JwtFilter;
-import com.tommy.springbootjwt.jwt.TokenProvider;
+import com.tommy.springbootjwt.user.dto.UserLoginDto;
+import com.tommy.springbootjwt.user.dto.TokenResponseDto;
+import com.tommy.springbootjwt.config.jwt.JwtFilter;
+import com.tommy.springbootjwt.config.jwt.TokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -28,9 +27,9 @@ public class AuthController {
     private final AuthenticationManagerBuilder authenticationManagerBuilder;
 
     @PostMapping("/authenticate")
-    public ResponseEntity<TokenResponseDto> authorize(@Valid @RequestBody LoginDto loginDto) {
+    public ResponseEntity<TokenResponseDto> authorize(@Valid @RequestBody UserLoginDto userLoginDto) {
         UsernamePasswordAuthenticationToken authenticationToken =
-                new UsernamePasswordAuthenticationToken(loginDto.getName(), loginDto.getPassword());
+                new UsernamePasswordAuthenticationToken(userLoginDto.getName(), userLoginDto.getPassword());
 
         Authentication authentication = authenticationManagerBuilder.getObject()
                 .authenticate(authenticationToken);

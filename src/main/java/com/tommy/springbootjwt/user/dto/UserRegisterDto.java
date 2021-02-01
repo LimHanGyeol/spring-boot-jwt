@@ -1,7 +1,6 @@
-package com.tommy.springbootjwt.domain.dto;
+package com.tommy.springbootjwt.user.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.tommy.springbootjwt.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -14,7 +13,7 @@ import javax.validation.constraints.Size;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserDto {
+public class UserRegisterDto {
 
     @NotNull
     @Size(min = 3, max = 50)

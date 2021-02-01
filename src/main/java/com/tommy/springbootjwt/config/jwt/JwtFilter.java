@@ -1,4 +1,4 @@
-package com.tommy.springbootjwt.jwt;
+package com.tommy.springbootjwt.config.jwt;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

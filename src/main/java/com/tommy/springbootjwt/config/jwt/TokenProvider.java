@@ -1,4 +1,4 @@
-package com.tommy.springbootjwt.jwt;
+package com.tommy.springbootjwt.config.jwt;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;

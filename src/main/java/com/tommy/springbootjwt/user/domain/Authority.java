@@ -1,4 +1,4 @@
-package com.tommy.springbootjwt.domain;
+package com.tommy.springbootjwt.user.domain;
 
 import lombok.AccessLevel;
 import lombok.Getter;

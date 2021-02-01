@@ -1,4 +1,4 @@
-package com.tommy.springbootjwt.domain;
+package com.tommy.springbootjwt.user.domain;
 
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.jpa.repository.JpaRepository;

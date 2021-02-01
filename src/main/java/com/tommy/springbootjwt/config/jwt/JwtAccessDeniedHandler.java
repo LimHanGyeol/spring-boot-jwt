@@ -1,4 +1,4 @@
-package com.tommy.springbootjwt.jwt;
+package com.tommy.springbootjwt.config.jwt;
 
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;

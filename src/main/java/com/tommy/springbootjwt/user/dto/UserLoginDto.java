@@ -1,16 +1,15 @@
-package com.tommy.springbootjwt.domain.dto;
+package com.tommy.springbootjwt.user.dto;
 
 import lombok.*;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-@ToString
 @Getter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class LoginDto {
+public class UserLoginDto {
 
     @NotNull
     @Size(min = 3, max = 50)
@@ -19,4 +18,5 @@ public class LoginDto {
     @NotNull
     @Size(min = 3, max = 100)
     private String password;
+
 }

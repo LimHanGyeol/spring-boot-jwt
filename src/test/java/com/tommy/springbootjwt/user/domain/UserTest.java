@@ -1,17 +1,15 @@
-package com.tommy.springbootjwt.domain;
+package com.tommy.springbootjwt.user.domain;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.Collections;
-
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertAll;
 
 class UserTest {
 
     @Test
     void user_create() {
-        User user = User.register("hangyeol", "1234", "tommy", Collections.singleton(new Authority("ROLE_USER")));
+        User user = User.registerCustomer("hangyeol", "1234", "tommy");
         assertAll(
                 () -> assertThat(user).isNotNull(),
                 () -> assertThat(user.getName()).isEqualTo("hangyeol"),

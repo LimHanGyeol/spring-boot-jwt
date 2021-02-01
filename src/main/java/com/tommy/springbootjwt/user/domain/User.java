@@ -1,11 +1,13 @@
-package com.tommy.springbootjwt.domain;
+package com.tommy.springbootjwt.user.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.tommy.springbootjwt.user.dto.UserResponseDto;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.Collections;
 import java.util.Set;
 
 @Getter
@@ -15,22 +17,21 @@ public class User {
 
     @JsonIgnore
     @Id
-    @Column(name = "user_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name", length = 50, unique = true, nullable = false)
+    @Column(length = 50, unique = true, nullable = false)
     private String name;
 
     @JsonIgnore
-    @Column(name = "password", length = 100, nullable = false)
+    @Column(length = 100, nullable = false)
     private String password;
 
-    @Column(name = "nickname", length = 50, nullable = false)
+    @Column(length = 50, nullable = false)
     private String nickname;
 
     @JsonIgnore
-    @Column(name = "activated")
+    @Column(nullable = false)
     private boolean activated;
 
     @ManyToMany
@@ -48,8 +49,13 @@ public class User {
         this.activated = true;
     }
 
-    public static User register(String name, String password, String nickname, Set<Authority> authorities) {
-        return new User(name, password, nickname, authorities);
+    public static User registerCustomer(String name, String password, String nickname) {
+        Authority authority = new Authority("ROLE_USER");
+        return new User(name, password, nickname, Collections.singleton(authority));
+    }
+
+    public UserResponseDto toUserResponseDto() {
+        return new UserResponseDto(this);
     }
 
 }

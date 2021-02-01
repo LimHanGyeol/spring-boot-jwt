@@ -1,4 +1,4 @@
-package com.tommy.springbootjwt.domain.dto;
+package com.tommy.springbootjwt.user.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

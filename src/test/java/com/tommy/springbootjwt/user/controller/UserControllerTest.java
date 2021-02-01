@@ -1,4 +1,4 @@
-package com.tommy.springbootjwt.controller;
+package com.tommy.springbootjwt.user.controller;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

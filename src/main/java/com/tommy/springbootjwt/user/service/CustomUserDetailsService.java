@@ -1,6 +1,6 @@
-package com.tommy.springbootjwt.service;
+package com.tommy.springbootjwt.user.service;
 
-import com.tommy.springbootjwt.domain.UserRepository;
+import com.tommy.springbootjwt.user.domain.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -28,7 +28,7 @@ public class CustomUserDetailsService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException(username));
     }
 
-    private User createUser(String name, com.tommy.springbootjwt.domain.User user) {
+    private User createUser(String name, com.tommy.springbootjwt.user.domain.User user) {
         if (!user.isActivated()) {
             throw new IllegalArgumentException("invalid user authentication : " + name);
         }

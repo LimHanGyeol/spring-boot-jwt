@@ -1,9 +1,9 @@
 package com.tommy.springbootjwt.config;
 
-import com.tommy.springbootjwt.jwt.JwtAccessDeniedHandler;
-import com.tommy.springbootjwt.jwt.JwtAuthenticationEntryPoint;
-import com.tommy.springbootjwt.jwt.JwtSecurityConfig;
-import com.tommy.springbootjwt.jwt.TokenProvider;
+import com.tommy.springbootjwt.config.jwt.JwtAccessDeniedHandler;
+import com.tommy.springbootjwt.config.jwt.JwtAuthenticationEntryPoint;
+import com.tommy.springbootjwt.config.jwt.JwtSecurityConfig;
+import com.tommy.springbootjwt.config.jwt.TokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
