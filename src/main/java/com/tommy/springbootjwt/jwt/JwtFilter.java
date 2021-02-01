@@ -19,7 +19,6 @@ import java.io.IOException;
 public class JwtFilter extends GenericFilterBean {
 
     public static final String AUTHORIZATION_HEADER = "Authorization";
-
     private final TokenProvider tokenProvider;
 
     @Override
@@ -41,8 +40,8 @@ public class JwtFilter extends GenericFilterBean {
         if (StringUtils.hasText(bearerToken) && bearerToken.startsWith("Bearer ")) {
             return bearerToken.substring(7);
         }
-        log.debug("유효한 JWT 토큰이 없습니다. uri : {}",requestUri);
-        throw new IllegalArgumentException("not found token info of header");
+        log.debug("not found token info of header. uri : {}",requestUri);
+        return bearerToken;
     }
 
 }
