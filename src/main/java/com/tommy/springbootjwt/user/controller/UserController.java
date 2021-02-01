@@ -5,6 +5,7 @@ import com.tommy.springbootjwt.user.dto.UserResponseDto;
 import com.tommy.springbootjwt.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +22,7 @@ public class UserController {
 
     @PostMapping("/register")
     public ResponseEntity<UserResponseDto> register(@Valid @RequestBody UserRegisterDto userRegisterDto) {
-        return ResponseEntity.ok().body(userService.register(userRegisterDto));
+        return ResponseEntity.status(HttpStatus.CREATED).body(userService.register(userRegisterDto));
     }
 
     @GetMapping("/user")
