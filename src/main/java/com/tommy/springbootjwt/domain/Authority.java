@@ -17,4 +17,8 @@ public class Authority {
     @Column(name = "authority_name", length = 50)
     private String authorityName;
 
+    public Authority(String authorityName) {
+        this.authorityName = authorityName;
+    }
+
 }

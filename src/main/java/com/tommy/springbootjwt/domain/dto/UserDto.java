@@ -1,6 +1,7 @@
 package com.tommy.springbootjwt.domain.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.tommy.springbootjwt.domain.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;

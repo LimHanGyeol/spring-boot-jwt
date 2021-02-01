@@ -40,16 +40,16 @@ public class User {
             inverseJoinColumns = {@JoinColumn(name = "authority_name", referencedColumnName = "authority_name")})
     private Set<Authority> authorities;
 
-    private User(Long id, String name, String password, String nickname) {
-        this.id = id;
+    private User(String name, String password, String nickname, Set<Authority> authorities) {
         this.name = name;
         this.password = password;
         this.nickname = nickname;
+        this.authorities = authorities;
         this.activated = true;
     }
 
-    public static User register(Long id, String name, String password, String nickname) {
-        return new User(id, name, password, nickname);
+    public static User register(String name, String password, String nickname, Set<Authority> authorities) {
+        return new User(name, password, nickname, authorities);
     }
 
 }
